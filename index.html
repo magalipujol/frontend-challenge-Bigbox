@@ -13,7 +13,10 @@
 
 <body>
     <div id="app">
-        <cards-grid :activities="activities"></cards-grid>
+        <div class="d-flex align-content-start flex-wrap">
+            <activity-card v-for="n in activities.length" :activities="activities" :index="n"></activity-card>
+        </div>
+        <!-- <cards-grid :activities="activities"></cards-grid> -->
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>

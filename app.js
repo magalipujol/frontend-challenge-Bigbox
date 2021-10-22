@@ -12,7 +12,7 @@ let app = Vue.createApp({
 })
 
 app.component('activity-card', {
-    props: ['activities'],
+    props: ['activities', "index"],
     methods: {
 
     },
@@ -20,7 +20,7 @@ app.component('activity-card', {
     <div class="card" style="width: 18rem;">
     <img class="card-img-top activity-img" src="https://static.bigbox.com.ar/uploads/activity/7d70d0e1-50a7-4395-ad5f-ed3a7a723f2f.jpg" alt="Card image cap">
     <div class="card-body activity-card-body">
-      <h5 class="card-title activity-title">{{ this.activities[0]?.title }}</h5>
+      <h5 class="card-title activity-title">{{ this.activities[index]?.title }}</h5>
       <p class="card-text activity-location">Palermo, CABA</p>
       <p class="card-text activity-description">Caipiroska a granel con vodka y picoteo de tu bar preferido, directo a la peurta de tu casa</p>
       <p class="card-text activity-points">5500 puntos</p>
@@ -35,10 +35,10 @@ app.component('cards-grid', {
     <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <activity-card :activities="activities"></activity-card>
+                    <activity-card :activities="activities" :index="0"></activity-card>
                 </div>
                 <div class="col-sm">
-                    <activity-card :activities="activities"></activity-card>
+                    <activity-card :activities="activities" :index="1"></activity-card>
                 </div>
                 <div class="col-sm">
                     <activity-card :activities="activities"></activity-card>
